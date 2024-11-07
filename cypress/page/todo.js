@@ -7,6 +7,7 @@ class todo {
         this.clearCompletedButton = '.clear-completed';
         this.filterActive = 'a[href="#/active"]';
         this.filterCompleted = 'a[href="#/completed"]';
+        this.rediobutton = "//label[contains(text(),'new')]/preceding-sibling::input"
     }
 
     addtodo(entertext) {
@@ -32,8 +33,26 @@ class todo {
     }
     deleteItem(item) {
         cy.contains(this.todoItems, item)
+            .trigger('mouseover')
             .find('.destroy')
             .click({ force: true });
+        // cy.xpath("//label[contains(text(),"+item+")]/preceding-sibling::input[@type='checkbox']") ////label[contains(text(),'welcome')]/preceding-sibling::input[@type='checkbox']
+        // .check()
+        // .trigger('mousemove')
+        // .find('.destroy')
+        // .click({ force: true });
     }
+    markTodoCompleted(item) {
+        cy.contains(this.todoItems, item)
+            .find('.toggle')
+            .check();
+    }
+    filterActiveItems() {
+        cy.get(this.filterActive).click();
+      }
+    
+      filterCompletedItems() {
+        cy.get(this.filterCompleted).click();
+      }
 }
 module.exports = new todo()
