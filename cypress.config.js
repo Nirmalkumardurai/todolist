@@ -1,7 +1,7 @@
-const { defineConfig } = require("cypress");
-const { allureCypress } =require( "allure-cypress/reporter");
+import { defineConfig } from 'cypress';
+import { allureCypress } from 'allure-cypress/reporter';
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here

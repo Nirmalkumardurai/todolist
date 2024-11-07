@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1730962061651' stop='1730962087845'>
+    <name>launching TODO website</name>
+    <title>launching TODO website</title>
+    <test-cases>
+        <test-case start='1730962061651' status='passed' stop='1730962083569'>
+            <name>should allow a user to Verify The URL </name>
+            <title>should allow a user to Verify The URL </title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1730962083590' status='passed' stop='1730962084336'>
+            <name>should allow a user to Add new todo items</name>
+            <title>should allow a user to Add new todo items</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1730962084350' status='passed' stop='1730962085440'>
+            <name>should allow a user to edit a todo item</name>
+            <title>should allow a user to edit a todo item</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1730962085455' status='passed' stop='1730962086240'>
+            <name>should allow a user to delete a todo item</name>
+            <title>should allow a user to delete a todo item</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1730962086258' status='passed' stop='1730962086691'>
+            <name>should mark a to-do as completed</name>
+            <title>should mark a to-do as completed</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1730962086715' status='passed' stop='1730962087845'>
+            <name>should filter active and completed to-dos</name>
+            <title>should filter active and completed to-dos</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

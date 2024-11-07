@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-07T06:36:11.946Z",
+    "end": "2024-11-07T06:36:18.892Z",
+    "duration": 6946,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e0c980b0-e732-4e0b-aed8-4d08d72ce5eb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\todo\\todo.cy.js",
+      "file": "cypress\\e2e\\todo\\todo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+          "title": "launching TODO website",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should allow a user to Verify The URL ",
+              "fullTitle": "launching TODO website should allow a user to Verify The URL ",
+              "timedOut": null,
+              "duration": 253,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('include', url);",
+              "err": {},
+              "uuid": "fdd567a7-4e25-484b-a686-25ca23b43f8b",
+              "parentUUID": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow a user to Add new todo items",
+              "fullTitle": "launching TODO website should allow a user to Add new todo items",
+              "timedOut": null,
+              "duration": 673,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@todolistdata').then(data => {\n  data.newitem.forEach(value => {\n    todo.addtodo(value);\n  });\n  todo.gettodocount().then(count => {\n    const getvalueinlist = parseInt(count.match(/\\d+/)[0], 10);\n    const arraycount = data.newitem.length;\n    expect(getvalueinlist).to.equal(arraycount);\n  });\n});",
+              "err": {},
+              "uuid": "5639b63a-3338-435c-a691-5c9db2671777",
+              "parentUUID": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow a user to edit a todo item",
+              "fullTitle": "launching TODO website should allow a user to edit a todo item",
+              "timedOut": null,
+              "duration": 1026,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@todolistdata').then(data => {\n  data.newitem.forEach(value => {\n    todo.addtodo(value);\n  });\n  todo.editTodoItem('welcome', 'newcar');\n  todo.getTodoItems().should('contain.text', 'newcar');\n});",
+              "err": {},
+              "uuid": "d2806956-3a9a-4dac-8edd-ac2da1fa75bd",
+              "parentUUID": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow a user to delete a todo item",
+              "fullTitle": "launching TODO website should allow a user to delete a todo item",
+              "timedOut": null,
+              "duration": 786,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@todolistdata').then(data => {\n  const deletename = \"welcome\";\n  data.newitem.forEach(value => {\n    todo.addtodo(value);\n  });\n  todo.deleteItem(deletename);\n  todo.getTodoItems().should('not.contain.text', deletename);\n});",
+              "err": {},
+              "uuid": "272b673a-555b-4684-a086-56065f22fa36",
+              "parentUUID": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should mark a to-do as completed",
+              "fullTitle": "launching TODO website should mark a to-do as completed",
+              "timedOut": null,
+              "duration": 483,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "todo.addtodo('Complete');\ntodo.markTodoCompleted('Complete');\ntodo.getTodoItems().contains('Complete').parents('li').should('have.class', 'completed');",
+              "err": {},
+              "uuid": "bfcc1ff7-45de-4f0d-aa41-922861673819",
+              "parentUUID": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should filter active and completed to-dos",
+              "fullTitle": "launching TODO website should filter active and completed to-dos",
+              "timedOut": null,
+              "duration": 1038,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@todolistdata').then(data => {\n  const complite = \"welcome\";\n  data.newitem.forEach(value => {\n    todo.addtodo(value);\n  });\n  todo.markTodoCompleted(complite);\n  todo.filterActiveItems();\n  todo.gettodocount().then(count => {\n    const getvalueinlist = parseInt(count.match(/\\d+/)[0], 10);\n    const arraycount = data.newitem.length - 1;\n    todo.getTodoItems().should('have.length', arraycount);\n    todo.filterCompletedItems();\n    todo.getTodoItems().should('have.length', 1);\n  });\n});",
+              "err": {},
+              "uuid": "5813f21b-f9ff-4dc2-8482-3fb78979f378",
+              "parentUUID": "35003ac3-6ea9-4696-8b5a-b4dbf746e247",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fdd567a7-4e25-484b-a686-25ca23b43f8b",
+            "5639b63a-3338-435c-a691-5c9db2671777",
+            "d2806956-3a9a-4dac-8edd-ac2da1fa75bd",
+            "272b673a-555b-4684-a086-56065f22fa36",
+            "bfcc1ff7-45de-4f0d-aa41-922861673819",
+            "5813f21b-f9ff-4dc2-8482-3fb78979f378"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4259,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
