@@ -1,11 +1,13 @@
 1. Clone Git Repository
 Clone your Git repository that contains the Cypress tests to your local machine. 
+Git Repo url :https://github.com/Nirmalkumardurai/todolist.git
 branchname:firstcommit
 
-2. Navigate to Command Line Interface
+
+3. Navigate to Command Line Interface
 Open your command line interface (Command Prompt for Windows).
 
-3. Install Dependencies (if necessary)
+4. Install Dependencies (if necessary)
 If you haven't installed dependencies before, run the following command to install Cypress and other dependencies listed in package.json.
 --npm install
 4.external data 
