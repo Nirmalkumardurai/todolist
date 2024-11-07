@@ -1,5 +1,6 @@
 1. Clone Git Repository
 Clone your Git repository that contains the Cypress tests to your local machine. 
+branchname:firstcommit
 
 2. Navigate to Command Line Interface
 Open your command line interface (Command Prompt for Windows).
