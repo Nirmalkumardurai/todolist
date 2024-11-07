@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"npx cypress run --spec 'cypress/e2e/todo/todo.cy.js'"
+    "start": "npx cypress run --spec 'cypress/e2e/todo/todo.cy.js'",
+    "browser:chrome-headed": "npx cypress run --browser=chrome --headed --spec cypress/e2e/todo/todo.cy.js --reporter mocha-allure-reporter",
+    "browser:chrome-headless": "npx cypress run --browser=chrome --headless --spec cypress/e2e/todo/todo.cy.js --reporter mocha-allure-reporter",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
+    "report:allure:cicd": "allure generate allure-results --clean -o allure-report"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +18,7 @@
     "cypress": "^13.15.2"
   },
   "devDependencies": {
+    "allure-cypress": "^3.0.6",
     "cypress-xpath": "^2.0.1"
   }
 }
